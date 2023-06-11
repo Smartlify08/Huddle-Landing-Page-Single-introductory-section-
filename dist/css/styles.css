@@ -1,0 +1,315 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --clr-violet:hsl(257, 40%, 49%);
+    --SoftMagenta: hsl(300, 69%, 71%);
+    --White:#fff;
+}
+
+body{
+    font-size: 15px;
+    line-height: 1.5;
+    background:url(../images/bg-desktop.svg) no-repeat;
+    background-position: 0px 0px;
+    background-size: cover;
+    background-color: var(--clr-violet);
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+
+
+#main_header{
+    animation-name:fadein;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-direction:alternate;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    margin-top: 20px;
+}
+
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+#showcase .container{
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+#showcase #illustration{
+    flex: 1;
+    animation-name:slide-right;
+    animation-timing-function: ease-in;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    position: relative;
+}
+
+@keyframes slide-right{
+    0%{
+        left: -1000px;
+    }
+
+    100%{
+        left:0;
+    }
+}
+
+#showcase #illustration img{
+    object-fit:scale-down;
+    width: 550px;
+    opacity: 0;
+    animation-name: image;
+    animation-duration:2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+@keyframes image{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+#showcase #description{
+    margin-top: 20px;
+    flex: 2;
+    padding: 25px;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation-name:slide-left;
+    animation-timing-function: ease-in;
+    animation-duration:2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    position: relative;
+}
+
+@keyframes slide-left{
+    0%{
+        right: -1000px;
+    }
+
+    100%{
+        right:0;
+    }
+}
+
+
+
+#description #description_header{
+    color:var(--White);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+#description .quote{
+    color: var(--White);
+    font-size:16px;
+}
+
+#description .btn{
+    box-shadow: 23px 3px 18px 0px rgba(0,0,0,0.1);
+    width: 190px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: var(--clr-violet);
+    border: none;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+}
+
+#description .btn:hover{
+    background-color: var(--SoftMagenta);
+
+    color: var(--White);
+}
+
+#socials{
+    padding: 5px 0;
+}
+
+#socials .container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#socials .icons{
+    display: flex;
+    gap: 20px;
+}
+
+#socials .fa-facebook{
+    animation-name:bubble;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    /* animation-delay: 2s; */
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+
+@keyframes bubble{
+    0%{
+        bottom:1000px;
+    }
+
+    100%{
+        bottom:0px;
+    }
+}
+
+
+#socials .fa-instagram{
+    animation-name:bubble2;
+    animation-timing-function: ease;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+
+@keyframes bubble2{
+    0%{
+        bottom:-1000px;
+    }
+
+    100%{
+        bottom:0px;
+    }
+}
+
+
+#socials .fa-twitter{
+    animation-name:bubble3;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+
+@keyframes bubble3{
+    0%{
+        bottom:1000px;
+    }
+
+    100%{
+        bottom:0px;
+    }
+}
+
+
+
+#socials .icons .icon{
+    border: 2px solid var(--White);
+    width: 40px;
+    height: 40px;
+    padding: 10px 9px 10px 10px;
+    border-radius: 50%;
+}
+
+
+@media (max-width:990px){
+    body{
+        overflow:visible;
+        background-image:url(../images/bg-mobile.svg);
+    }
+
+    #main_header{
+        padding: 20px 50px;
+    }
+
+
+    #showcase .container{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #showcase #illustration img{
+        width: 350px;
+    }
+
+    #showcase #description{
+        text-align: center;
+        align-items: center;
+    }
+
+    #description #description_header {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #description .quote{
+        font-size: 18px;
+        width: 70%;
+    }
+
+    #description .btn{
+        margin-top: 15px;
+        width: 250px;
+    }
+
+
+    #socials{
+        margin: 80px 0 0 0;
+    }
+}
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
